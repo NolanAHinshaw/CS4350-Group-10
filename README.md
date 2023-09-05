@@ -1,2 +1,2 @@
-##Course Feedback 
-Team Members: Caleb Sumsky, Nolan Hinshaw, Holden Salamon, Zack Ansari, and Doris Sandey Velasquez
+# Course Feedback
+### Team Members: Caleb Sumsky, Nolan Hinshaw, Holden Salamon, Zack Ansari, and Doris Sandey Velasquez
