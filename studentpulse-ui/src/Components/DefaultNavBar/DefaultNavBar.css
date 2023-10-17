@@ -1,0 +1,31 @@
+.navbar{
+    padding: 0;
+    overflow: hidden;
+    background-color: #2f3c53;
+    width: 100vw;
+    vertical-align:middle;
+}
+
+.navbar-content{
+    display: flex;
+    margin: 20px;
+    justify-content:space-evenly;
+}
+
+.navbar-content-landinglink{
+    background-color: aquamarine;
+    width: 100%;
+}
+
+.navbar-content-rightlinks{
+    display: flex;
+    font-weight: bold;
+    background-color: blueviolet;
+    justify-content: right;
+    width: 100%;
+}
+
+a, a:hover, a:active, a:visited, a:focus {
+    text-decoration:none;
+    color: white;
+}
