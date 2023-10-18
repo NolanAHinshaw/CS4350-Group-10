@@ -1,3 +1,4 @@
+/*NAVIGATION BAR GENERAL DESIGN -----------------------------------------------------------------*/
 .navbar{
     padding: 0;
     overflow: hidden;
@@ -8,7 +9,7 @@
 
 .navbar-content{
     display: flex;
-    margin: 10px 40px 10px 40px;
+    margin: 0.625em 2.5em 0.625em 2.5em;
     justify-content:space-evenly;
 }
 
@@ -31,16 +32,18 @@ a, a:hover, a:active, a:visited, a:focus {
     color: white;
 }
 
+/*NAVIGATION BAR BUTTON DESIGNS -----------------------------------------------------------------*/
+
 .login-button{
     border: 2px solid rgba(255, 255, 255, .2);
-    padding: 9px 25px 9px 25px;
+    padding: 0.563em 1.563em 0.563em 1.563em;
     border-radius: 4px;
 }
 
 .register-button{
     border-radius: 4px;
     background-color: #4675C0;
-    padding: 9px 25px 9px 25px;
+    padding: 0.563em 1.563em 0.563em 1.563em;
     border: 2px solid rgba(255, 255, 255, .2);
-    margin-left: 16px;
+    margin-left: 1em;
 }
