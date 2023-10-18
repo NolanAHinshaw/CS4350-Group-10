@@ -1,31 +1,46 @@
 .navbar{
     padding: 0;
     overflow: hidden;
-    background-color: #2f3c53;
+    background-color: #19335A;
     width: 100vw;
     vertical-align:middle;
 }
 
 .navbar-content{
     display: flex;
-    margin: 20px;
+    margin: 10px 40px 10px 40px;
     justify-content:space-evenly;
 }
 
 .navbar-content-landinglink{
-    background-color: aquamarine;
     width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .navbar-content-rightlinks{
     display: flex;
     font-weight: bold;
-    background-color: blueviolet;
     justify-content: right;
     width: 100%;
+    align-items: center;
 }
 
 a, a:hover, a:active, a:visited, a:focus {
     text-decoration:none;
     color: white;
+}
+
+.login-button{
+    border: 2px solid rgba(255, 255, 255, .2);
+    padding: 9px 25px 9px 25px;
+    border-radius: 4px;
+}
+
+.register-button{
+    border-radius: 4px;
+    background-color: #4675C0;
+    padding: 9px 25px 9px 25px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    margin-left: 16px;
 }
