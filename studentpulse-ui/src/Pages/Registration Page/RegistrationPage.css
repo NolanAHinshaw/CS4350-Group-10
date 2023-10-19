@@ -1,12 +1,9 @@
+/*REGISTRATION PAGE GENERAL DESIGN -----------------------------------------------------------------*/
 .register-page{
     display: flex;
     width: 97vw;
     justify-content: space-evenly;
     margin-top: 4em;
-}
-
-.logo-vector{
-    height: 10%;
 }
 
 .register-page-content{
@@ -18,6 +15,7 @@
     color:#0e1c31;
 }
 
+/*REGISTRATION HERO IMAGE SECTION DESIGN -----------------------------------------------------------------*/
 .hero-image{
     width: 100%;
     color: #ffffff;
@@ -45,11 +43,21 @@
     font-size: 1.5em;
 }
 
+/*REGISTRATION FORM GENERAL DESIGNS -----------------------------------------------------------------*/
 .input-field-section{
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 10px 0px 10px 0px;
+}
+
+.name-field{
+    display: flex;
+    gap: 10px;
+}
+
+.logo-vector{
+    height: 10%;
 }
 
 label{
@@ -69,11 +77,13 @@ input:focus{
     font-family: inherit;
 }
 
-.name-field{
-    display: flex;
-    gap: 10px;
+a.sign-in-link, a.sign-in-link:hover, a.sign-in-link:active, a.sign-in-link:visited, a.sign-in-link:focus {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #697A98
 }
 
+/*REGISTRATION FORM BUTTON DESIGNS -----------------------------------------------------------------*/
 .register-page-button{
     width: 60%;
     padding: 15px 10px;
@@ -89,10 +99,4 @@ input:focus{
 
 .register-page-button:hover{
     background-image: linear-gradient(rgb(0 0 0/40%) 0 0);
-}
-
-a.sign-in-link, a.sign-in-link:hover, a.sign-in-link:active, a.sign-in-link:visited, a.sign-in-link:focus {
-    text-decoration: underline;
-    font-weight: bold;
-    color: #697A98
 }
