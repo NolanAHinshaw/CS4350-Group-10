@@ -5,6 +5,7 @@
     background-color: #19335A;
     width: 100vw;
     vertical-align:middle;
+    position: fixed;
 }
 
 .navbar-content{
