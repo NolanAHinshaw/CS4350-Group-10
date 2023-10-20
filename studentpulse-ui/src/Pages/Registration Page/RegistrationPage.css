@@ -60,6 +60,11 @@
     height: 10%;
 }
 
+.error-text{
+    font-weight: bold;
+    color: #c90000;
+}
+
 label{
     font-weight: bold;
 }
@@ -99,4 +104,24 @@ a.sign-in-link, a.sign-in-link:hover, a.sign-in-link:active, a.sign-in-link:visi
 
 .register-page-button:hover{
     background-image: linear-gradient(rgb(0 0 0/40%) 0 0);
+}
+
+/*REGISTRATION FORM DROPDOWN MENU DESIGNS -----------------------------------------------------------------*/
+.dropdown-menu{
+    width: 70%;
+    padding: 10px 0px 10px 0px;
+    border-radius: 8px;
+    border: 1px solid rgba(165, 165, 165, 1);
+    font-family: inherit;
+    background-color: #fafafc;
+}
+
+.dropdown-field{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.dropdown-field label{
+    width: 30%;
 }
