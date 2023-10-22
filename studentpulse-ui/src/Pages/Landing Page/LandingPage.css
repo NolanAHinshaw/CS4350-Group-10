@@ -1,4 +1,94 @@
 .Landing{
+    width: 100%;
+    background-color: #e1f3ff;
+}
+
+.landing-hero{
+    height: 120vh;
+    width: 98.78vw;
+    color: #ffffff;
+    display:flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    content: "";
+    background-size: cover;
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(0, 3, 29, 0.767)), 
+    url("../../Images/landing-hero2.png");
+}
+
+.landing-hero-text h2{
+    font-size: 2.5em;
     font-weight: bold;
-    margin-top: 4em;
+    width: 70%;
+}
+
+.landing-hero-text p{
+    width: 70%;
+    margin-bottom: 40px;
+}
+
+.landing-hero-text{
+    margin-left: 7em;
+    width: 50%;
+}
+
+.landing-action-button{
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 15px;
+    background-color: #e35858;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.landing-action-button:hover{
+    background-image: linear-gradient(rgb(0 0 0/40%) 0 0);
+}
+
+
+.feature-info-section{
+    padding: 15px 7em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.section-title{
+    font-weight: bold;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.section-description{
+    text-align: center;
+    font-size: 1em;
+    margin-top: -15px;
+    padding: 0px 7em 30px 7em;
+
+}
+
+.feature-card{
+    width: 250px;
+    background-color: #ceebff;
+    text-align: center;
+    padding: 15px 20px;
+    border: 1px solid #253f68;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px -10px rgba(0,0,0,.75);
+}
+
+.feature-icon{
+    background-color:#253f68;
+    height: 70px;
+    width: 70px;
+    margin-top: -55px;
+    border-radius: 50%;
+    border: 1px solid #1f1a32;
+    padding: 10px;
+}
+
+.hero-title{
+    color:#8fb7f7;
 }
