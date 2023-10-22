@@ -9,33 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 dotenv.config({ path: './.env'});
-const ingredients = [
-  {
-      "id": "1",
-      "item": "Bacon"
-  },
-  {
-      "id": "2",
-      "item": "Eggs"
-  },
-  {
-      "id": "3",
-      "item": "Milk"
-  },
-  {
-      "id": "4",
-      "item": "Butter"
-  }
-];
-app.get('/ingredients', (req, res) => {
-  res.send(ingredients);
-})
 
-app.get('/signup', (req, res) => {
-  res.send(ingredients);
-})
-
-console.log(process.env.DATABASE_HOST);
 const db = mysql.createConnection({
   host: process.env.DATABASE_HOST,
   port: process.env.DATABASE_PORT,
@@ -44,21 +18,13 @@ const db = mysql.createConnection({
   database: process.env.DATABASE,
 })
 db.connect()
-/* 
-DATABASE INFO:
-host: 104.62.84.241
-port: 54622
-username: root
-password: StudentPulse420
-database: users
-*/
 
 //sign up page
-app.post('/signup', (req,res) => {
-  const sql = "INSERT INTO login (`name`, `email`, `password`) VALUES (?)";
-  const {name, email, password} = req.body;
+app.post('/register', (req,res) => {
+  const sql = "INSERT INTO login (`firstname`,`lastname`, `username`, `email`, `password`) VALUES (?)";
+  const {firstname, lastname, username, email, password} = req.body;
   //try doing [...req.body] instead of [name,email,password]
-  db.query(sql, [name,email,password], (err, data) => {
+  db.query(sql, [firstname,lastname, username, email, password], (err, data) => {
     if(err) {
       return res.json("Error");
     }
@@ -68,9 +34,9 @@ app.post('/signup', (req,res) => {
 
 // //login page
 app.post('/login', (req,res) => {
-  const sql = "SELECT * FROM login WHERE `email` == ? AND `password` = ?";
-  const {email, password} = req.body;
-  db.query(sql, [email, password], (err, data) => {
+  const sql = "SELECT * FROM login WHERE `username` == ? AND `password` = ?";
+  const {username, password} = req.body;
+  db.query(sql, [username, password], (err, data) => {
     if(err) {
       return res.json("Error");
     }
@@ -80,6 +46,14 @@ app.post('/login', (req,res) => {
       return res.json("Failure");
     }
   })
+})
+
+app.get('/register', (req, res) => {
+  res.send('register');
+})
+
+app.get('/login', (req, res) => {
+  res.send('login');
 })
 
 // routing for login pages and others should look like so: 
