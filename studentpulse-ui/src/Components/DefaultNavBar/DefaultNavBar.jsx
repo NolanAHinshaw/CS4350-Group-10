@@ -14,8 +14,8 @@ export default function DefaultNavBar(){
                 </div>
 
                 <div className='navbar-content-rightlinks'>
-                    <Link to='' className='login-button'> Login </Link>
-                    <Link to='' className='register-button'> Register </Link>
+                    <Link to='/login' className='login-button'> Login </Link>
+                    <Link to='/register' className='register-button'> Register </Link>
                 </div>
             </div>
         </div>
