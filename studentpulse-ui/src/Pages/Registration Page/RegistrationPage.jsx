@@ -3,7 +3,7 @@ import './RegistrationPage.css';
 import React from 'react';
 import axios from 'axios';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import RegistrationForm from './RegistrationForm';
 import PulseLogo from '../../Images/LogoVector.svg';
 import GradCapIcon from '../../Images/grad-cap.svg';
@@ -11,6 +11,7 @@ import GradCapIcon from '../../Images/grad-cap.svg';
 
 // MAIN REGISTER PAGE FUNCTION -------------------------------------------------------------------------------------------------
 function RegistrationPage(){
+    const navigate = useNavigate();
     const [error, setError] = useState({});
     const [registerForm, setRegisterForm] = useState({
         firstName: "",
@@ -23,6 +24,7 @@ function RegistrationPage(){
 
     const handleRegisterFormSubmit = async () => {
         console.log(registerForm);
+        navigate('/dashboard');
         /*
         REGISTRATION FUNCTIONALITY : 
         const {data, error} = await axios.post('http://localhost:3001/auth/register', registerForm);
