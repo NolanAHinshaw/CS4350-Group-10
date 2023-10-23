@@ -6,6 +6,7 @@ const config = {
         // password: process.env.DATABASE_PW,
         // database: process.env.DATABASE,
         host: '104.62.84.241',
+        user: 'root',
         password: 'StudentPulse420',
         database: 'users',
         port: 3306,
