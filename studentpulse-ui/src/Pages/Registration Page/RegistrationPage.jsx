@@ -8,11 +8,16 @@ import RegistrationForm from './RegistrationForm';
 import PulseLogo from '../../Images/LogoVector.svg';
 import GradCapIcon from '../../Images/grad-cap.svg';
 
+import SuccessToast from '../../Components/SuccessToast/SuccessToast';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
+
 
 // MAIN REGISTER PAGE FUNCTION -------------------------------------------------------------------------------------------------
 function RegistrationPage(){
     const navigate = useNavigate();
     const [error, setError] = useState({});
+    const [open, setOpen] = useState(false);
     const [registerForm, setRegisterForm] = useState({
         firstName: "",
         lastName: "",
@@ -22,9 +27,11 @@ function RegistrationPage(){
         userType: "Student" //default value
     });
 
-    const handleRegisterFormSubmit = async () => {
+    const handleRegisterFormSubmit = async (evt) => {
+        evt.preventDefault();
         console.log(registerForm);
-        navigate('/dashboard');
+        await setOpen(true);
+        //navigate('/dashboard');
         /*
         REGISTRATION FUNCTIONALITY : 
         const {data, error} = await axios.post('http://localhost:3001/auth/register', registerForm);
@@ -51,11 +58,12 @@ function RegistrationPage(){
                 <img src={ PulseLogo } alt='Student Pulse Logo' className='logo-vector'></img>
                 <h1>Create Your Account</h1>
 
-                <RegistrationForm registerForm = {registerForm} setRegisterForm = {setRegisterForm} error = {error} setError = {setError}/>
+                <RegistrationForm registerForm = {registerForm} setRegisterForm = {setRegisterForm} error = {error} setError = {setError} handleFormSubmit={handleRegisterFormSubmit}/>
                 {error && <p className='error-text'>{error.form}</p>}
-                <button className='register-page-button' onClick={handleRegisterFormSubmit}> SIGN UP </button>
                 <p>Already Have An Account? <Link to='/login' className='sign-in-link'> Login </Link></p>
             </div>
+
+            <SuccessToast open={open} setOpen={setOpen} message='Woohoo, You have successfully registered!'/>
         </div>
     );
 }

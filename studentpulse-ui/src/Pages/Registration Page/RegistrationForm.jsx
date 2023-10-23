@@ -1,7 +1,7 @@
 import React from 'react';
 import './RegistrationPage.css';
 
-function RegistrationForm({registerForm, setRegisterForm, error, setError}){
+function RegistrationForm({registerForm, setRegisterForm, error, setError, handleFormSubmit}){
     const dropdownMenuItems = ['Student', 'Professor'];
 
     //FUNCTION FOR LOADING OPTIONS IN USER IDENTIFICATION DROPDOWN
@@ -45,7 +45,7 @@ function RegistrationForm({registerForm, setRegisterForm, error, setError}){
     };
 
     return(
-        <form action='' className='register-form'>
+        <form action='' className='register-form' onSubmit={handleFormSubmit}>
             <div className='dropdown-field'>
                 <label> Who Are You? </label>
                 <select name="userType" className='dropdown-menu' onChange={handleFormInputChanges}>
@@ -81,6 +81,8 @@ function RegistrationForm({registerForm, setRegisterForm, error, setError}){
                 <label>Confirm Password</label>
                 <input type='password' name='passwordConfirm' placeholder='Enter password again' onChange={handleFormInputChanges} required/>
             </div>
+
+            <input type='submit' className='register-page-button' value='SIGN UP'/>
         </form>
     );
 };

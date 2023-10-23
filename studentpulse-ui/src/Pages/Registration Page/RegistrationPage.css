@@ -44,6 +44,10 @@
 }
 
 /*REGISTRATION FORM GENERAL DESIGNS -----------------------------------------------------------------*/
+.register-form{
+    margin-bottom: -35px;
+}
+
 .register-page-content .input-field-section{
     display: flex;
     flex-direction: column;
@@ -69,6 +73,8 @@
     font-weight: bold;
 }
 
+.register-page-content 
+
 .register-page-content input{
     padding: 12px 20px;
     border-radius: 8px;
@@ -89,8 +95,8 @@
 }
 
 /*REGISTRATION FORM BUTTON DESIGNS -----------------------------------------------------------------*/
-.register-page-button{
-    width: 60%;
+.register-page-content .register-form .register-page-button{
+    width: 100%;
     padding: 15px 10px;
     border: 1px solid rgba(255, 255, 255, .2);
     border-radius: 4px;
@@ -102,7 +108,7 @@
     font-size: 1em;
 }
 
-.register-page-button:hover{
+.register-page-content .register-form .register-page-button:hover{
     background-image: linear-gradient(rgb(0 0 0/40%) 0 0);
 }
 
