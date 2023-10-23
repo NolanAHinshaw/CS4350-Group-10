@@ -1,5 +1,4 @@
 import React from 'react';
-import {useState} from 'react';
 import './RegistrationPage.css';
 
 function RegistrationForm({registerForm, setRegisterForm, error, setError}){
