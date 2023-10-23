@@ -5,7 +5,7 @@
 
 .landing-hero{
     height: 120vh;
-    width: 98.78vw;
+    width: 100vw;
     color: #ffffff;
     display:flex;
     flex-direction: column;
@@ -25,7 +25,7 @@
 
 .landing-hero-text p{
     width: 70%;
-    margin-bottom: 40px;
+    margin-bottom: 2.5em;
 }
 
 .landing-hero-text{
@@ -34,9 +34,9 @@
 }
 
 .landing-action-button{
-    padding: 10px 20px;
+    padding: 0.625em 1.25em;
     border: 1px solid rgba(255, 255, 255, .2);
-    border-radius: 15px;
+    border-radius: 0.938em;
     background-color: #e35858;
     color: #ffffff;
     font-weight: bold;
@@ -50,7 +50,7 @@
 
 
 .feature-info-section{
-    padding: 15px 7em;
+    padding: 0.938em 7em;
     display: flex;
     justify-content: space-evenly;
 }
@@ -64,29 +64,29 @@
 .section-description{
     text-align: center;
     font-size: 1em;
-    margin-top: -15px;
-    padding: 0px 7em 30px 7em;
+    margin-top: -0.938em;
+    padding: 0em 7em 1.875em 7em;
 
 }
 
 .feature-card{
-    width: 250px;
+    width: 15.625em;
     background-color: #ceebff;
     text-align: center;
-    padding: 15px 20px;
+    padding: 0.938em 1.25em;
     border: 1px solid #253f68;
-    border-radius: 8px;
-    box-shadow: 0 10px 20px -10px rgba(0,0,0,.75);
+    border-radius: 0.5em;
+    box-shadow: 0 0.625em 1.25em -0.625em rgba(0,0,0,.75);
 }
 
 .feature-icon{
     background-color:#253f68;
-    height: 70px;
-    width: 70px;
-    margin-top: -55px;
+    height: 4.375em;
+    width: 4.375em;
+    margin-top: -3.438em;
     border-radius: 50%;
     border: 1px solid #1f1a32;
-    padding: 10px;
+    padding: 0.625em;
 }
 
 .hero-title{
