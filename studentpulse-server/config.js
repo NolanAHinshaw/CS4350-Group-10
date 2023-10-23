@@ -8,7 +8,7 @@ const config = {
         host: '104.62.84.241',
         password: 'StudentPulse420',
         database: 'users',
-        port: 9516,
+        port: 3306,
         connectTimeout: 60000
       },
     listPerPage: 10,
