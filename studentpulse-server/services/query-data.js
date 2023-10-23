@@ -20,9 +20,9 @@ async function getMultiple(page = 1){
 async function create(queryData){
     const result = await db.query(
         `INSERT INTO login 
-        (id, firstname, lastname, email, password) 
+        (id, firstname, lastname, username, email, password) 
         VALUES 
-        ('${queryData.id}', ${queryData.firstname}, ${queryData.lastname}, ${queryData.email}, ${queryData.password})`
+        ('${queryData.id}', ${queryData.firstname}, ${queryData.lastname}, ${queryData.username}, ${queryData.email}, ${queryData.password})`
     );
 
     let message = 'Error in creating account';
