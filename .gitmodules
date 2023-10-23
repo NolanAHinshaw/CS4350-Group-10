@@ -1,0 +1,3 @@
+[submodule "studentpulse-server"]
+	path = studentpulse-server
+	url = https://github.com/NolanAHinshaw/CS4350-Group-10.git
