@@ -8,6 +8,7 @@ async function getMultiple(page = 1){
     `SELECT *
     FROM login LIMIT ${offset},${config.listPerPage}`
   );
+  console.log('rows',rows);
   const data = helper.emptyOrRows(rows);
   const meta = {page};
 
@@ -20,9 +21,9 @@ async function getMultiple(page = 1){
 async function create(queryData){
     const result = await db.query(
         `INSERT INTO login 
-        (id, firstname, lastname, username, email, password) 
+        (id, firstname, lastname, email, password) 
         VALUES 
-        ('${queryData.id}', ${queryData.firstname}, ${queryData.lastname}, ${queryData.username}, ${queryData.email}, ${queryData.password})`
+        ('${queryData.id}', ${queryData.firstname}, ${queryData.lastname}, ${queryData.email}, ${queryData.password})`
     );
 
     let message = 'Error in creating account';
