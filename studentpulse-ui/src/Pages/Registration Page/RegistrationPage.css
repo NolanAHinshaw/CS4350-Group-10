@@ -3,7 +3,7 @@
     display: flex;
     width: 97vw;
     justify-content: space-evenly;
-    margin-top: 4em;
+    margin-top: 3.9em;
 }
 
 .register-page-content{
@@ -44,32 +44,32 @@
 }
 
 /*REGISTRATION FORM GENERAL DESIGNS -----------------------------------------------------------------*/
-.input-field-section{
+.register-page-content .input-field-section{
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 10px 0px 10px 0px;
 }
 
-.name-field{
+.register-page-content .name-field{
     display: flex;
     gap: 10px;
 }
 
-.logo-vector{
+.register-page-content .logo-vector{
     height: 10%;
 }
 
-.error-text{
+.register-page-content .error-text{
     font-weight: bold;
     color: #c90000;
 }
 
-label{
+.register-page-content label{
     font-weight: bold;
 }
 
-input{
+.register-page-content input{
     padding: 12px 20px;
     border-radius: 8px;
     border: 1px solid rgba(165, 165, 165, 1);
@@ -77,12 +77,12 @@ input{
     background-color: #fafafc;
 }
 
-input:focus{
+.register-page-content input:focus{
     background-color: #eaeaf1;
     font-family: inherit;
 }
 
-a.sign-in-link, a.sign-in-link:hover, a.sign-in-link:active, a.sign-in-link:visited, a.sign-in-link:focus {
+.register-page-content a.sign-in-link, a.sign-in-link:hover, a.sign-in-link:active, a.sign-in-link:visited, a.sign-in-link:focus {
     text-decoration: underline;
     font-weight: bold;
     color: #697A98

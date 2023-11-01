@@ -1,16 +1,15 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 const config = {
     db: {
-        // host: process.env.DATABASE_HOST,
-        // port: process.env.DATABASE_PORT,
-        // username: process.env.DATABASE_USER,
-        // password: process.env.DATABASE_PW,
-        // database: process.env.DATABASE,
-        host: '104.62.84.241',
-        user: 'root',
-        password: 'StudentPulse420',
-        database: 'users',
-        port: 3306,
-        connectTimeout: 60000
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PW,
+        database: process.env.DB,
+        port: process.env.DB_PORT,
+        connectTimeout: 60000,
+        connectionLimit : 10,
       },
     listPerPage: 10,
   };
