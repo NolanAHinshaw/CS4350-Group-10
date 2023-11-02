@@ -1,5 +1,5 @@
 // IMPORTS ---------------------------------------------------------------------------------------------------------------
-import './RegistrationPage.css';
+import styles from './RegistrationPage.module.css';
 import React from 'react';
 import axios from 'axios';
 import { useState } from 'react';
@@ -45,21 +45,21 @@ function RegistrationPage(){
     };
 
     return(
-        <div className='register-page'>
-            <div className='hero-image'>
-                <div className='hero-text'>
+        <div className={styles['register-page']}>
+            <div className={styles['hero-image']}>
+                <div className={styles['hero-text']}>
                     <h2> Boost Your Academic Excellence With Student Pulse </h2>
                     <p> Prioritizing student productivity, collaboration on real-time feedback, and personalized recommendations !</p>
                     <img src={  GradCapIcon } alt='Graduation Cap Icon'/>
                 </div>
             </div>
 
-            <div className='register-page-content'>
-                <img src={ PulseLogo } alt='Student Pulse Logo' className='logo-vector'></img>
+            <div className={styles['register-page-content']}>
+                <img src={ PulseLogo } alt='Student Pulse Logo' className={styles['logo-vector']}></img>
                 <h1>Create Your Account</h1>
 
                 <RegistrationForm registerForm = {registerForm} setRegisterForm = {setRegisterForm} error = {error} setError = {setError} handleFormSubmit={handleRegisterFormSubmit}/>
-                {error && <p className='error-text'>{error.form}</p>}
+                {error && <p className={styles['error-text']}>{error.form}</p>}
                 <p>Already Have An Account? <Link to='/login' className='sign-in-link'> Login </Link></p>
             </div>
 
