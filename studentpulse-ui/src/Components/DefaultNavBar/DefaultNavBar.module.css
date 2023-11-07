@@ -15,16 +15,34 @@
 }
 
 .navbar-content-landinglink{
-    width: 100%;
+    width: 60%;
     display: flex;
     align-items: center;
+}
+
+.navbar-content-centerlinks{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.navbar-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.navbar-links img{
+    width: 30px;
 }
 
 .navbar-content-rightlinks{
     display: flex;
     font-weight: bold;
     justify-content: right;
-    width: 100%;
+    width: 60%;
     align-items: center;
 }
 

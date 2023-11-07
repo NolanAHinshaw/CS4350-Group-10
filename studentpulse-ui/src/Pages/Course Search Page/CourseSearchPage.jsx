@@ -1,17 +1,17 @@
 // IMPORTS ---------------------------------------------------------------------------------------------------------------
 import React from 'react';
-import './Dashboard.css';
+import styles from './CourseSearchPage.module.css';
 
 
 // MAIN DASHBOARD PAGE FUNCTION -------------------------------------------------------------------------------------------------
-function Dashboard(){
+function CourseSearchPage(){
 
     return(
-        <div className='dashboard-page'>
-            This is the dashboard!
+        <div className={styles['course-search-page']}>
+            This is the course search page!
         </div>
     );
 }
 
 
-export default React.memo(Dashboard);
+export default React.memo(CourseSearchPage);

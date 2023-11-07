@@ -4,7 +4,7 @@ import LandingPage from '../Landing Page/LandingPage';
 import RegisterPage from '../Registration Page/RegistrationPage';
 import DefaultNavBar from '../../Components/DefaultNavBar/DefaultNavBar';
 import LoginPage from '../Login Page/LoginPage';
-import Dashboard from '../Dashboard/Dashboard';
+import CourseSearchPage from '../Course Search Page/CourseSearchPage';
 import './App.css';
 
 
@@ -19,7 +19,7 @@ export default function App() {
             <Route path='/' element={<LandingPage />}></Route>
             <Route path='/register' element={<RegisterPage/>}></Route>
             <Route path='/login' element={<LoginPage/>}></Route>
-            <Route path='/dashboard' element={<Dashboard />}></Route>
+            <Route path='/search-courses' element={<CourseSearchPage />}></Route>
           </Routes>
         </main>
       </BrowserRouter>
