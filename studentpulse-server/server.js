@@ -3,7 +3,7 @@ const mysql = require('mysql');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const app = express();
-const port = 9000;
+const port = 3307;
 const queryDataRouter = require("./routes/query-data");
 
 // const login = require('./studentpulse-ui/src/Pages/Login Page/LoginPage');

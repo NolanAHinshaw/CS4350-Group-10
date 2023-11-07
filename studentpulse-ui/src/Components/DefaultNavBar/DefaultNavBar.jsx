@@ -2,9 +2,9 @@
 import styles from './DefaultNavBar.module.css';
 import { Link } from 'react-router-dom';
 import PulseLogo from '../../Images/StudentPulseLogo.svg';
-import SearchIcon from '../../Images/search-icon.svg';
-import ProfileIcon from '../../Images/profile-icon.svg';
-import CalendarIcon from '../../Images/calendar-icon-W.svg';
+//import SearchIcon from '../../Images/search-icon.svg';
+//import ProfileIcon from '../../Images/profile-icon.svg';
+//import CalendarIcon from '../../Images/calendar-icon-W.svg';
 
 
 // MAIN NAV-BAR FUNCTION -------------------------------------------------------------------------------------------------

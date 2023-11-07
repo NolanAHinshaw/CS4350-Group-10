@@ -8,7 +8,7 @@ function CourseSearchPage(){
 
     return(
         <div className={styles['course-search-page']}>
-            This is the course search page!
+            <h1>Search For A Course</h1>
         </div>
     );
 }
