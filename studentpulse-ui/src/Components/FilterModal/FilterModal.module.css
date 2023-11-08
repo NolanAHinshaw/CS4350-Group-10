@@ -1,0 +1,9 @@
+.filter-modal{
+    background-color: rgba(7, 11, 79, 0.8);
+    color: #ffffff;
+    position: absolute;
+    margin-left: 225px;
+    margin-top: 220px;
+    width: 200px;
+    padding: 10px;
+}
