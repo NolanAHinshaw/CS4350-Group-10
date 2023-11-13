@@ -1,3 +1,147 @@
+/*GENERAL COURSE SEARCH PAGE DESIGNS -----------------------------------------------------------------*/
+
 .course-search-page{
     margin-top: 4em;
+    width: 95vw;
+    padding: 20px 0px 20px 40px;
+}
+
+.search-name-form{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-form-input{
+    width: 100%;
+    font-size: 16px;
+    padding-left: 40px;
+}
+
+.search-form-button{
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 6px;
+    background-color: #4675C0;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1em;
+    width: fit-content;
+    padding: 0.563em 1.563em 0.563em 1.563em;
+}
+
+.search-form-button:hover{
+    background-image: linear-gradient(rgb(0 0 0/40%) 0 0);
+}
+
+.search-form-input-section{
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.search-form-input-section img{
+    width: 25px;
+    position: absolute;
+    margin-left: 10px;
+}
+
+.search-info-section{
+    width: 99%;
+    display: flex;
+    margin-top: 20px;
+    height: 100%;
+}
+
+
+
+
+.filter-form-section{
+    width: 20%;
+    border-right: 2px solid rgba(0,0,0, .3);
+    display: flex;
+    flex-direction: column;
+    height:fit-content;
+}
+
+.filter-form-section h2{
+    border-bottom: 3px solid #0d59d3;
+}
+
+.form-filter-options h4{
+    margin-bottom: 10px;
+}
+
+.filter-checkboxes{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-form-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -10px;
+}
+
+.filter-form-header button{
+    background-color: transparent;
+    border: none;
+}
+
+
+
+
+
+.course-list-section{
+    padding-left: 20px;
+    width: 80%;
+}
+
+.course-list-section-results{
+    background-color: #e6e5e3;
+    margin-top: -10px;
+    width: 100%;
+    padding:10px;
+    height: 400px;
+    overflow: scroll;
+    text-align: center;
+}
+
+.course-list-section-results button{
+    border: 2px solid rgba(0, 0, 0, .5);
+    border-radius: 15px;
+    background-color: transparent;
+    color: #000000;
+    font-weight: bold;
+    font-size: 1em;
+    font-family: inherit;
+    width: fit-content;
+    padding: 0.563em 1.563em 0.563em 1.563em; 
+}
+
+.course-list-section-results button:hover{
+    background-color: #c4c4c4;
+}
+
+.course-list-no-results{
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.course-list-no-results p{
+    margin-top: -10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.course-list-no-results img{
+    width: 80px;
+    margin-bottom: -20px;
 }
