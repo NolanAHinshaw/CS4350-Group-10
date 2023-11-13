@@ -3,6 +3,8 @@ import React, {useState} from 'react';
 import styles from './CourseSearchPage.module.css';
 import SearchIcon from '../../Images/search-icon-grey.svg';
 import InfoIcon from '../../Images/info-icon.svg';
+import SadFace from '../../Images/sad-face-icon.svg';
+import IndividualCourseDetail from '../../Components/IndividualCourseDetail/IndividualCourseDetail';
 import FilterForm from './FilterForm';
 import FilterModal from '../../Components/FilterModal/FilterModal';
 
@@ -10,13 +12,18 @@ import FilterModal from '../../Components/FilterModal/FilterModal';
 // MAIN DASHBOARD PAGE FUNCTION -------------------------------------------------------------------------------------------------
 function CourseSearchPage(){
     const [openModal, setOpenModal] = useState(false);
+    const [searchResults, setSearchResults] = useState({b:'b'})
+    
     const handleFormSubmit = () => {
-        console.log('whoop di scoop')
         //HANDLE THE FORM SUBMISSIONS WHETHER THIS BE FROM SEARCH FIELD OR FROM THE FILTERS
     };
 
     const handleFormInputChanges = () => {
         //IMPLEMENT FUNCTIONALITY FOR WHENEVER AUSER ENTERS SOMETHING IN THE SEARCH BAR
+    };
+
+    const handleDisplaySearchResults = () => {
+        //IMPLEMENT FUNCTIONALITY FOR DISPLAYING ALL THE RESULTS IN THE INDIVIDUALCOURSEDETAIL COMPONENT
     };
 
 
@@ -43,6 +50,26 @@ function CourseSearchPage(){
                 </div>
                 <div className={styles['course-list-section']}>
                     <h2>Your Search Results</h2>
+                    <div className={styles['course-list-section-results']}>
+                        {Object.keys(searchResults)?.length === 0 ? 
+                        <div className={styles['course-list-no-results']}>
+                            <img src={SadFace} alt='Sad Face'/>
+                            <h2>WHOOPS!</h2>
+                            <p>No courses match your search preference. <br/> Enter a course name and try again!</p>
+                        </div>
+                        :
+                        <>
+                            <IndividualCourseDetail 
+                            courseName='Name Of course'
+                            description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor sed do eiusmod tempor sed do eiusmod tempor . . .'
+                            rating={4.3}
+                            courseId = {123}
+                            numOfFeedback = {26}
+                            />
+                            <button>Load More</button>
+                        </> 
+                        }
+                    </div>
                 </div>
             </div>
         </div>
