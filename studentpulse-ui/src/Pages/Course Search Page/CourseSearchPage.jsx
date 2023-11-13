@@ -58,7 +58,7 @@ function CourseSearchPage(){
                             <p>No courses match your search preference. <br/> Enter a course name and try again!</p>
                         </div>
                         :
-                        <>
+                        <> {/**TO DO: REMOVE THE INDIVIDUAL COURSE DETAIL AND REPLACE WITH HANDLER FUNCTION */}
                             <IndividualCourseDetail 
                             courseName='Name Of course'
                             description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor sed do eiusmod tempor sed do eiusmod tempor . . .'
