@@ -5,6 +5,7 @@ import RegisterPage from '../Registration Page/RegistrationPage';
 import DefaultNavBar from '../../Components/DefaultNavBar/DefaultNavBar';
 import LoginPage from '../Login Page/LoginPage';
 import './App.css';
+import UserProfile from '../User Profile Page/UserProfile';
 
 
 // MAIN APP FUNCTION ----------------------------------------------------------------------------------------------------- 
@@ -18,6 +19,8 @@ export default function App() {
             <Route path='/' element={<LandingPage />}></Route>
             <Route path='/register' element={<RegisterPage/>}></Route>
             <Route path='/login' element={<LoginPage/>}></Route>
+            <Route path='/userprofile' element={<UserProfile/>}></Route>
+
           </Routes>
         </main>
       </BrowserRouter>
