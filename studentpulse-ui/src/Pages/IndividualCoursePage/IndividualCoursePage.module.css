@@ -1,3 +1,132 @@
 .individual-course-page{
+    margin-top: 4em;
+    width: 100%;
+    padding: 20px 0px 20px 0px;
+}
+
+.course-page-subheader{
+    width: fit-content;
+}
+
+.individual-course-page h2{
+    text-decoration: underline;
+}
+
+.course-sections-title{
+    padding: 0px 0px 0px 40px;
+}
+
+.back-button{
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    font-family: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0px 0px 0px 40px;
+}
+
+.back-button img{
+    width: 35px;
+    transform:rotate(180deg);
+}
+
+.course-page-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: fit-content;
+    padding: 0px 20px 0px 40px;
+}
+
+.course-page-header-content{
+    width: 67%;
+}
+
+.course-page-header-rating{
+    width: 250px;
+    height: 200px;
+    background-color: #e0e1e7;
     text-align: center;
+    border-radius: 15px;
+}
+
+.course-rating{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    margin-top: -50px;
+    font-weight: bold;
+}
+
+.course-rating img{
+    width: 50px;
+}
+
+.course-sections{
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    padding: 0px 0px 0px 40px;
+}
+
+
+
+
+.course-feedback-section{
+    background-color: #ebf3fd;
+    height: 100%;
+    margin-top: 20px;
+    padding: 0px 20px 0px 40px;
+}
+
+.course-feedback-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-feedback-header button{
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 6px;
+    background-color: #4675C0;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1em;
+    width: fit-content;
+    padding: 2px 1.563em 2px 1.563em;
+}
+
+.course-feedback-header div{
+    display: flex;
+    width: 30%;
+    justify-content: flex-end;
+    gap: 50px;
+}
+
+.course-feedback-content-empty{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+}
+
+.course-feedback-content-empty img{
+    width: 70px;
+}
+
+.course-feedback-empty{
+    margin-top: -10px;
+    text-align: center;
+    font-weight: bold;
+    width: 50%;
+    padding: 20px;
+    font-size: 25px;
 }
