@@ -6,6 +6,7 @@ import BackArrow from '../../Images/right-arrow-icon.svg';
 import StarRating from '../../Images/filled-star-icon.svg';
 import SadFace from '../../Images/sad-face-icon.svg';
 import AddIcon from '../../Images/add-icon.svg';
+import FeedbackDetail from '../../Components/FeedbackDetail/FeedbackDetail';
 
 
 // MAIN DASHBOARD PAGE FUNCTION -------------------------------------------------------------------------------------------------
@@ -82,12 +83,17 @@ function IndividualCoursePage(){
                         <button><img src={AddIcon} alt='Add Feedback Icon'/>Add Feedback</button>
                     </div>
                 </div>
-                <div className={styles['course-feedback-content-empty']}>
+                {/* <div className={styles['course-feedback-content-empty']}>
                     <img src={SadFace} alt='Sad Error Face'/>
                     <p className={styles['course-feedback-empty']}>
                         WHOOPS! <br />
                         No feedback available just yet. Try again later or add your own feedback!
                     </p>
+                </div> */}
+                <div className={styles['course-feedback-content']}>
+                    <FeedbackDetail />
+                    <FeedbackDetail />
+                    <button className={styles['feedback-load-button']}>Read More</button>
                 </div>
             </div>
         </div>

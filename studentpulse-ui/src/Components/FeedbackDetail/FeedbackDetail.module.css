@@ -1,0 +1,39 @@
+.feedback-component{
+    border-bottom: 2px solid rgba(0,0,0, .3);
+    padding-bottom: 20px;
+    padding-right: 10px;
+    text-align: left;
+}
+
+.upvoting-arrows{
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.upvoting-arrows img{
+    width: 40px;
+}
+
+.downvoting-arrows{
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.downvoting-arrows img{
+    width: 40px;
+    transform: rotate(180deg);
+}
+
+.voting-section{
+    display: flex;
+}
