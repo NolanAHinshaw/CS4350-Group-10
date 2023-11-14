@@ -1,5 +1,5 @@
 // IMPORTS ---------------------------------------------------------------------------------------------------------------
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './IndividualCoursePage.module.css';
 import BackArrow from '../../Images/right-arrow-icon.svg';
@@ -12,6 +12,7 @@ import FeedbackDetail from '../../Components/FeedbackDetail/FeedbackDetail';
 // MAIN DASHBOARD PAGE FUNCTION -------------------------------------------------------------------------------------------------
 function IndividualCoursePage(){
     const navigate = useNavigate();
+    const [feedbackResults, setFeedbackResults] = useState({b:'b'})
     const dropdownFilterItems = ['Lorem Ipsum', 'Lorem Ipsum 2', 'Lorem Ipsum 3'];
 
     //FUNCTION FOR LOADING OPTIONS IN USER IDENTIFICATION DROPDOWN
@@ -83,18 +84,22 @@ function IndividualCoursePage(){
                         <button><img src={AddIcon} alt='Add Feedback Icon'/>Add Feedback</button>
                     </div>
                 </div>
-                {/* <div className={styles['course-feedback-content-empty']}>
-                    <img src={SadFace} alt='Sad Error Face'/>
-                    <p className={styles['course-feedback-empty']}>
-                        WHOOPS! <br />
-                        No feedback available just yet. Try again later or add your own feedback!
-                    </p>
-                </div> */}
-                <div className={styles['course-feedback-content']}>
-                    <FeedbackDetail />
-                    <FeedbackDetail />
-                    <button className={styles['feedback-load-button']}>Read More</button>
-                </div>
+                {
+                    Object.keys(feedbackResults)?.length === 0 ?
+                    <div className={styles['course-feedback-content-empty']}>
+                        <img src={SadFace} alt='Sad Error Face'/>
+                        <p className={styles['course-feedback-empty']}>
+                            WHOOPS! <br />
+                            No feedback available just yet. Try again later or add your own feedback!
+                        </p>
+                    </div>
+                    :
+                    <div className={styles['course-feedback-content']}>
+                        {/**TO DO: REMOVE THE FEEDBACK DETAIL AND REPLACE WITH HANDLER FUNCTION FOR DISPLAYING FEEDBACK RESULTS */}
+                        <FeedbackDetail />
+                        <button className={styles['feedback-load-button']}>Read More</button>
+                    </div>
+                }
             </div>
         </div>
     );
