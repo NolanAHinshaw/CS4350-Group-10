@@ -2,11 +2,11 @@ const express = require('express');
 const mysql = require('mysql');
 const cors = require('cors');
 const dotenv = require('dotenv');
+dotenv.config({ path: './.env'});
 const app = express();
-const port = 3306;
+const bcrypt = require('bcrypt-nodejs');
+const port = process.env.DB_PORT || 3306;
 const queryDataRouter = require("./routes/query-data");
-
-// const login = require('./studentpulse-ui/src/Pages/Login Page/LoginPage');
 
 app.use(cors());
 app.use(express.json());
@@ -16,11 +16,8 @@ app.use(
   })
 );
 
-app.get("/", (req, res) => {
-  res.send({ message: "ok" });
-});
-
 app.use("/query-data", queryDataRouter);
+
 /* Error handler middleware */
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
@@ -28,20 +25,101 @@ app.use((err, req, res, next) => {
   res.status(statusCode).json({ message: err.message });
   return;
 });
-// dotenv.config({ path: './.env'});
 
-// const db = mysql.createConnection({
-//   // host: process.env.DATABASE_HOST,
-//   // port: process.env.DATABASE_PORT,
-//   // username: process.env.DATABASE_USER,
-//   // password: process.env.DATABASE_PW,
-//   // database: process.env.DATABASE,
-//   host: '104.62.84.241',
-//   username: 'root',
-//   password: 'StudentPulse420',
-//   database: 'users',
-// })
-// db.connect()
+app.get("/home", (req, res) => {
+  res.send({ message: "ok" });
+});
+
+app.get("/register", (req, res) => {
+  res.send("register");
+});
+
+app.get("/signin", (req, res) => {
+  res.send("signin");
+});
+
+//routes: 
+/* 
+  - signin and register
+  - course with id (showing feedback/information for courses)
+*/
+
+// route: delete specific course (based on id inputted) --> should only be allowed to do based on role 
+// (Student = shouldnt be able to delete; Professor = should be able to delete)
+app.get("/course/:id/delete", (req, res) => {
+  const {id} = req.params;
+  res.send(`this is ${id} delete page`);
+});
+
+// route: specific course (based on id inputted)
+app.get("/course/:id", (req, res) => {
+  const {id} = req.params;
+  res.send(`this is course: ${id} view page`);
+});
+
+// route: delete user profile (based on id inputted -> should only be able to delete your own profile)
+app.get("/userprofile/:id/delete", (req, res) => {
+  const {id} = req.params;
+  res.send(`this is user profile: ${id} delete page`);
+});
+
+// route: edit user profile (based on id inputted)
+app.patch("/userprofile/:id/edit", (req, res) => {
+  const {id} = req.params;
+  const {username, password} = req.body;
+  res.json(`this is user profile: ${id} with username: ${username} & password: ${password} edit page`);
+});
+
+// route: view user profile (based on id inputted)
+app.get("/userprofile/:id", (req, res) => {
+  const {id} = req.params;
+  res.send(`this is user profile: ${id} view page`);
+});
+
+// route: edit user feedback (based on id inputted using PATCH)
+app.patch("/userfeedback/:id/edit", (req, res) => {
+  const {id} = req.params;
+  const {description, courseID} = req.body;
+  res.send(`this is user feedback: ${id} with description: ${description} & courseID: ${courseID} edit page`);
+});
+
+// route: delete user feedback (based on id inputted)
+app.get("/userfeedback/:id/delete", (req, res) => {
+  const {id} = req.params;
+  res.send(`this is user feedback: ${id} delete page`);
+});
+
+// route: view course feedback (based on id inputted)
+app.get("/userfeedback/:id", (req, res) => {
+  const {id} = req.params;
+  res.send(`this is user feedback: ${id} view page`);
+});
+
+// route: user registration info (from form data -> frontend)
+app.post("/register", (req, res) => {
+  
+  const {email, firstName, lastName} = req.body;
+
+  if(!firstName || !lastName || !email) {
+    return res.status(400).json("first name, last name, and email are incorrect");
+  }
+  else { 
+    return res.status(200).json({email, firstName, lastName});
+  }
+});
+
+// route: sign in
+app.post("/signin", (req, res) => {
+  
+  const {username, password} = req.body;
+
+  if(!username || !password) {
+    return res.status(400).json("Username and password incorrect");
+  }
+  else { 
+    return res.status(200).json({username, password});
+  }
+});
 
 // //sign up page
 // app.post('/register', (req,res) => {
@@ -70,24 +148,6 @@ app.use((err, req, res, next) => {
 //       return res.json("Failure");
 //     }
 //   })
-// })
-
-app.get('/register', (req, res) => {
-  res.send('register'); ///Users/runitsnolan/Documents/CS4350-Group-10/studentpulse-ui/src/Pages/Login Page/LoginPage.jsx
-})
-
-
-app.get('/login', (req, res) => {
-  res.send(login);
-})
-
-// routing for login pages and others should look like so: 
-// (after routing we should look to redirect the data for POST)
-// app.get('/login', (req, res) => {
-// const {user, pass} = req.params -> get params from request in order to use
-//   res.render(
-//     <Login/>
-//     )
 // })
 
 app.listen(port, () => {

@@ -56,10 +56,11 @@ function RegistrationPage(){
 
             <div className={styles['register-page-content']}>
                 <img src={ PulseLogo } alt='Student Pulse Logo' className={styles['logo-vector']}></img>
-                <h1>Create Your Account</h1>
-
+                <h1>Create Your Account</h1>        
+                <button className='register-page-button' onClick={handleRegisterFormSubmit}> SIGN UP </button>
                 <RegistrationForm registerForm = {registerForm} setRegisterForm = {setRegisterForm} error = {error} setError = {setError} handleFormSubmit={handleRegisterFormSubmit}/>
                 {error && <p className={styles['error-text']}>{error.form}</p>}
+
                 <p>Already Have An Account? <Link to='/login' className='sign-in-link'> Login </Link></p>
             </div>
 
