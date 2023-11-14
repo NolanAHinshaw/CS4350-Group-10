@@ -1,0 +1,42 @@
+.course-results-details{
+    background-color: #fefefe;
+    padding: 10px 30px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.course-results-details p{
+    text-align: left;
+}
+
+.details-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -20px;
+}
+
+.details-header h3{
+    text-decoration: underline;
+}
+
+.details-header img{
+    width: 35px;
+}
+
+.details-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -20px;
+}
+
+.details-footer p{
+    font-style: italic;
+    font-weight: bold;
+    color: #6f6f6f;
+}
+
+.details-footer-rating{
+    display: flex;
+}

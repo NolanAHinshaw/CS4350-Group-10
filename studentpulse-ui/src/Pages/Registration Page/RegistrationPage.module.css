@@ -25,7 +25,7 @@
     align-items: center;
     background: url("../../Images/registration-hero.jpg");
     background-size: cover;
-    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 0 0 125em rgba(0, 0, 0, 0.6);
 }
 
 .hero-text{
@@ -44,16 +44,20 @@
 }
 
 /*REGISTRATION FORM GENERAL DESIGNS -----------------------------------------------------------------*/
+.register-form{
+    margin-bottom: -2.188em;
+}
+
 .register-page-content .input-field-section{
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 10px 0px 10px 0px;
+    padding: 0.625em 0em 0.625em 0em;
 }
 
 .register-page-content .name-field{
     display: flex;
-    gap: 10px;
+    gap: 0.625em;
 }
 
 .register-page-content .logo-vector{
@@ -70,8 +74,8 @@
 }
 
 .register-page-content input{
-    padding: 12px 20px;
-    border-radius: 8px;
+    padding: 0.75em 1.25em;
+    border-radius: 0.5em;
     border: 1px solid rgba(165, 165, 165, 1);
     font-family: inherit;
     background-color: #fafafc;
@@ -89,27 +93,27 @@
 }
 
 /*REGISTRATION FORM BUTTON DESIGNS -----------------------------------------------------------------*/
-.register-page-button{
-    width: 60%;
-    padding: 15px 10px;
+.register-page-content .register-form .register-page-button{
+    width: 100%;
+    padding: 0.938em 0.625em;
     border: 1px solid rgba(255, 255, 255, .2);
     border-radius: 4px;
     background-color: #4675C0;
     color: #ffffff;
     font-weight: bold;
     font-family: inherit;
-    margin-top: 40px;
+    margin-top: 2.5em;
     font-size: 1em;
 }
 
-.register-page-button:hover{
+.register-page-content .register-form .register-page-button:hover{
     background-image: linear-gradient(rgb(0 0 0/40%) 0 0);
 }
 
 /*REGISTRATION FORM DROPDOWN MENU DESIGNS -----------------------------------------------------------------*/
 .dropdown-menu{
     width: 70%;
-    padding: 10px 0px 10px 0px;
+    padding: 0.625em 0px 0.625em 0px;
     border-radius: 8px;
     border: 1px solid rgba(165, 165, 165, 1);
     font-family: inherit;
@@ -118,7 +122,7 @@
 
 .dropdown-field{
     display: flex;
-    gap: 10px;
+    gap: 0.625em;
     align-items: center;
 }
 

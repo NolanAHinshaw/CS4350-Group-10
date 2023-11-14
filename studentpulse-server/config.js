@@ -12,6 +12,6 @@ const config = {
         connectionLimit : 10,
       },
     listPerPage: 10,
-  };
-
+  }
+  
   module.exports = config;
