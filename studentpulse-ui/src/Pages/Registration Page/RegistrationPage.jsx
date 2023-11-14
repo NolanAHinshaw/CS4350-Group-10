@@ -40,7 +40,7 @@ function RegistrationPage(){
                 <h1>Create Your Account</h1>
 
                 <RegistrationForm registerForm = {registerForm} setRegisterForm = {setRegisterForm} error = {error} setError = {setError}/>
-
+        
                 <button className='register-page-button' onClick={handleRegisterFormSubmit}> SIGN UP </button>
                 <p>Already Have An Account? <Link to='/login' className='sign-in-link'> Login </Link></p>
             </div>
