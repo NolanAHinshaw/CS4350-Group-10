@@ -5,11 +5,28 @@ import styles from './IndividualCoursePage.module.css';
 import BackArrow from '../../Images/right-arrow-icon.svg';
 import StarRating from '../../Images/filled-star-icon.svg';
 import SadFace from '../../Images/sad-face-icon.svg';
+import AddIcon from '../../Images/add-icon.svg';
 
 
 // MAIN DASHBOARD PAGE FUNCTION -------------------------------------------------------------------------------------------------
 function IndividualCoursePage(){
     const navigate = useNavigate();
+    const dropdownFilterItems = ['Lorem Ipsum', 'Lorem Ipsum 2', 'Lorem Ipsum 3'];
+
+    //FUNCTION FOR LOADING OPTIONS IN USER IDENTIFICATION DROPDOWN
+    const loadDropdownMenu = (dropdownItems) => {
+        return dropdownItems?.map(menuItem => (
+            <option value={menuItem} key={menuItem} onClick={handleFilterSelection}>
+                {menuItem}
+            </option>
+        ));
+    };
+
+    //FUNCTION FOR DISPLAYING NEW FILTERED FEEDBACK RESULTS WHEN FILTER SELECTION MADE
+    const handleFilterSelection = () => {
+        //IMPLEMENT FILTER FUNCTIONALITY HERE
+        console.log('whoopdescoop');
+    };
 
     return(
         <div className={styles['individual-course-page']}>
@@ -55,9 +72,14 @@ function IndividualCoursePage(){
             <div className={styles['course-feedback-section']}>
                 <div className={styles['course-feedback-header']}>
                     <h2>Course Feedback</h2>
-                    <div>
-                        <p>FILTER</p>
-                        <button>Add Feedback</button>
+                    <div className={styles['course-feedback-header-right']}>
+                        <div className={styles['dropdown-field']}>
+                            <label> FILTER: </label>
+                            <select name="userType" className={styles['dropdown-menu']} onChange={handleFilterSelection}>
+                                {loadDropdownMenu(dropdownFilterItems)}
+                            </select>
+                        </div>
+                        <button><img src={AddIcon} alt='Add Feedback Icon'/>Add Feedback</button>
                     </div>
                 </div>
                 <div className={styles['course-feedback-content-empty']}>
