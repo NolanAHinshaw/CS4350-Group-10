@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import RegistrationForm from './RegistrationForm';
 import PulseLogo from '../../Images/LogoVector.svg';
 import GradCapIcon from '../../Images/grad-cap.svg';
+import apiClient from '../../Services/apiClient';
 
 import SuccessToast from '../../Components/SuccessToast/SuccessToast';
 import Snackbar from '@mui/material/Snackbar';
@@ -14,13 +15,14 @@ import Alert from '@mui/material/Alert';
 
 
 // MAIN REGISTER PAGE FUNCTION -------------------------------------------------------------------------------------------------
-function RegistrationPage(){
+function RegistrationPage({user, setUser}){
     const navigate = useNavigate();
     const [error, setError] = useState({});
     const [open, setOpen] = useState(false);
     const [registerForm, setRegisterForm] = useState({
-        firstName: "",
-        lastName: "",
+        id: 0,
+        firstname: "",
+        lastname: "",
         email: "",
         password: "",
         passwordConfirm: "",
@@ -29,19 +31,18 @@ function RegistrationPage(){
 
     const handleRegisterFormSubmit = async (evt) => {
         evt.preventDefault();
-        console.log(registerForm);
+        registerForm.id = Math.floor(Math.random()*20+1);
         await setOpen(true);
-        //navigate('/dashboard');
-        /*
-        REGISTRATION FUNCTIONALITY : 
-        const {data, error} = await axios.post('http://localhost:3001/auth/register', registerForm);
+
+        const {data, error} = await apiClient.signup(registerForm)
         if(data){
-            console.log(data);
-            setError((error) => ({...error, form: null}))
+            setError((error) => ({...error, form: null}));
+            setUser(data);
+            navigate('/search-courses');
         }
         if(error){
-            setError((error) => ({...error, form: error}));
-        }*/
+            setError((error) => ({...error, form: 'Unable to Register Successfully! Try Again!'}));
+        }
     };
 
     return(
@@ -57,7 +58,6 @@ function RegistrationPage(){
             <div className={styles['register-page-content']}>
                 <img src={ PulseLogo } alt='Student Pulse Logo' className={styles['logo-vector']}></img>
                 <h1>Create Your Account</h1>        
-                <button className='register-page-button' onClick={handleRegisterFormSubmit}> SIGN UP </button>
                 <RegistrationForm registerForm = {registerForm} setRegisterForm = {setRegisterForm} error = {error} setError = {setError} handleFormSubmit={handleRegisterFormSubmit}/>
                 {error && <p className={styles['error-text']}>{error.form}</p>}
 

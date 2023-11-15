@@ -8,21 +8,24 @@ import CalendarIcon from '../../Images/calendar-icon-W.svg';
 
 
 // MAIN NAV-BAR FUNCTION -------------------------------------------------------------------------------------------------
-export default function DefaultNavBar(){
+export default function DefaultNavBar({user, setUser}){
     return(
         <>
-        {/* <div className={styles['navbar']}>
-            <div className={styles['navbar-content']}>
-                <div className={styles['navbar-content-landinglink']}>
-                    <Link to='/'><img src={ PulseLogo } alt='Student Pulse Logo'></img></Link>
-                </div>
+        {
+            Object.keys(user)?.length === 0 ?
+            <div className={styles['navbar']}>
+                <div className={styles['navbar-content']}>
+                    <div className={styles['navbar-content-landinglink']}>
+                        <Link to='/'><img src={ PulseLogo } alt='Student Pulse Logo'></img></Link>
+                    </div>
 
-                <div className={styles['navbar-content-rightlinks']}>
-                    <Link to='/login' className={styles['login-button']}> Login </Link>
-                    <Link to='/register' className={styles['register-button']}> Register </Link>
+                    <div className={styles['navbar-content-rightlinks']}>
+                        <Link to='/login' className={styles['login-button']}> Login </Link>
+                        <Link to='/register' className={styles['register-button']}> Register </Link>
+                    </div>
                 </div>
             </div>
-        </div> */}
+        :
         <div className={styles['navbar']}>
             <div className={styles['navbar-content']}>
                 <div className={styles['navbar-content-landinglink']}>
@@ -36,10 +39,10 @@ export default function DefaultNavBar(){
                 </div>
 
                 <div className={styles['navbar-content-rightlinks']}>
-                    <Link to='/' className={styles['login-button']}> Log Out </Link>
+                    <Link to='/' className={styles['login-button']} onClick={()=>{setUser({})}}> Log Out </Link>
                 </div>                
             </div>
-        </div>
+        </div>}
         </>
     );
 };
