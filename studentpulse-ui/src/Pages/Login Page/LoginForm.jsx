@@ -1,10 +1,13 @@
 import React,{useState} from 'react';
 import './LoginPage.css';
+import apiClient from '../../Services/apiClient';
+import { useNavigate } from 'react-router-dom';
 
 
 
 
-function LoginForm(){
+function LoginForm({user, setUser}){
+  const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -17,7 +20,7 @@ function LoginForm(){
         setPassword(e.target.value);
       };
     
-      const handleSubmit = (e) => {
+      const handleSubmit = async(e) => {
         e.preventDefault();
     
         // Client-side verification
@@ -27,6 +30,16 @@ function LoginForm(){
         } else {
           setError('');
           // You can add your login logic here
+          const loginForm = {username: username, password: password}
+          const {data, error} = await apiClient.login(loginForm);
+          if(data){
+              setUser(data);
+              console.log(data);
+              navigate('/search-courses');
+          }
+          if(error){
+              setError((error) => ({...error, form: 'Unable to Register Successfully! Try Again!'}));
+          }
         }
       };
   
@@ -44,7 +57,7 @@ function LoginForm(){
                 <label htmlFor="password">Password:</label>
                 <input type="password" id="password" name="password" value={password} onChange={handlePasswordChange} required/>
             </div>
-            <button className='login-page-button'> SIGN IN </button>
+            <button className='login-page-button' onClick={handleSubmit}> SIGN IN </button>
         </div>
         </form>
     );

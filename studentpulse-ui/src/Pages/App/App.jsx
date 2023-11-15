@@ -23,7 +23,7 @@ export default function App() {
           <Routes>
             <Route path='/' element={<LandingPage />}></Route>
             <Route path='/register' element={<RegisterPage user={user} setUser={setUser}/>}></Route>
-            <Route path='/login' element={<LoginPage/>}></Route>
+            <Route path='/login' element={<LoginPage user={user} setUser={setUser}/>}></Route>
             <Route path='/profile' element={<UserProfile/>}></Route>
             <Route path='/search-courses' element={<CourseSearchPage />}></Route>
             <Route path='/search-courses/:courseId' element={<IndividualCoursePage />}></Route>

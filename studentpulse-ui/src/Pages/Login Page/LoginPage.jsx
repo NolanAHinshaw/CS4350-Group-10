@@ -8,7 +8,7 @@ import GradCapIcon from '../../Images/grad-cap.svg';
 
 
 // MAIN REGISTER PAGE FUNCTION -------------------------------------------------------------------------------------------------
-function LoginPage(){
+function LoginPage({user, setUser}){
 
     return(
         <div className='login-page'>
@@ -25,7 +25,7 @@ function LoginPage(){
                 <h1>Welcome Back!</h1>
                 <h4>Login</h4>
 
-                <LoginForm />
+                <LoginForm user={user} setUser={setUser}/>
 
                 <p><Link to='/forgotpassword' className='sign-in-link'> Forgot Password? </Link></p>
             </div>
