@@ -7,12 +7,14 @@ import StarRating from '../../Images/filled-star-icon.svg';
 import SadFace from '../../Images/sad-face-icon.svg';
 import AddIcon from '../../Images/add-icon.svg';
 import FeedbackDetail from '../../Components/FeedbackDetail/FeedbackDetail';
+import InsertFeedbackModal from '../../Components/InsertFeedbackModal/InsertFeedbackModal';
 
 
 // MAIN DASHBOARD PAGE FUNCTION -------------------------------------------------------------------------------------------------
 function IndividualCoursePage(){
     const navigate = useNavigate();
     const [feedbackResults, setFeedbackResults] = useState({b:'b'})
+    const [openFeedbackModal, setOpenFeedbackModal] = useState(false)
     const dropdownFilterItems = ['Lorem Ipsum', 'Lorem Ipsum 2', 'Lorem Ipsum 3'];
 
     //FUNCTION FOR LOADING OPTIONS IN USER IDENTIFICATION DROPDOWN
@@ -81,9 +83,10 @@ function IndividualCoursePage(){
                                 {loadDropdownMenu(dropdownFilterItems)}
                             </select>
                         </div>
-                        <button><img src={AddIcon} alt='Add Feedback Icon'/>Add Feedback</button>
+                        <button onClick={()=>setOpenFeedbackModal(true)}><img src={AddIcon} alt='Add Feedback Icon'/>Add Feedback</button>
                     </div>
                 </div>
+                <InsertFeedbackModal openModal={openFeedbackModal} setOpenModal={setOpenFeedbackModal}/>
                 {
                     Object.keys(feedbackResults)?.length === 0 ?
                     <div className={styles['course-feedback-content-empty']}>
