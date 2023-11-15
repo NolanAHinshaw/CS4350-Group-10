@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 dotenv.config({ path: './.env'});
 const app = express();
 const bcrypt = require('bcrypt-nodejs');
-const port = process.env.DB_PORT || 3306;
+const port = 8000;
 const queryDataRouter = require("./routes/query-data");
 
 app.use(cors());
