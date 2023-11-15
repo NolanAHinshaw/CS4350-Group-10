@@ -100,6 +100,11 @@ function IndividualCoursePage(){
                     <div className={styles['course-feedback-content']}>
                         {/**TO DO: REMOVE THE FEEDBACK DETAIL AND REPLACE WITH HANDLER FUNCTION FOR DISPLAYING FEEDBACK RESULTS */}
                         <FeedbackDetail />
+                        <FeedbackDetail />
+                        <FeedbackDetail />
+                        <FeedbackDetail />
+                        <FeedbackDetail />
+                        <FeedbackDetail />
                         <button className={styles['feedback-load-button']}>Read More</button>
                     </div>
                 }

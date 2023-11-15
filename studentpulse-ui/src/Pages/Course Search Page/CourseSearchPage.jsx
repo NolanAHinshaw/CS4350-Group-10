@@ -66,6 +66,34 @@ function CourseSearchPage(){
                             courseId = {123}
                             numOfFeedback = {26}
                             />
+                            <IndividualCourseDetail 
+                            courseName='Name Of course'
+                            description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor sed do eiusmod tempor sed do eiusmod tempor . . .'
+                            rating={4.3}
+                            courseId = {123}
+                            numOfFeedback = {26}
+                            />
+                            <IndividualCourseDetail 
+                            courseName='Name Of course'
+                            description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor sed do eiusmod tempor sed do eiusmod tempor . . .'
+                            rating={4.3}
+                            courseId = {123}
+                            numOfFeedback = {26}
+                            />
+                            <IndividualCourseDetail 
+                            courseName='Name Of course'
+                            description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor sed do eiusmod tempor sed do eiusmod tempor . . .'
+                            rating={4.3}
+                            courseId = {123}
+                            numOfFeedback = {26}
+                            />
+                            <IndividualCourseDetail 
+                            courseName='Name Of course'
+                            description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor sed do eiusmod tempor sed do eiusmod tempor . . .'
+                            rating={4.3}
+                            courseId = {123}
+                            numOfFeedback = {26}
+                            />
                             <button>Load More</button>
                         </> 
                         }
