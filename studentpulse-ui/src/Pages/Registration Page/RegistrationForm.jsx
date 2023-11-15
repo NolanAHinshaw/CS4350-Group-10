@@ -56,11 +56,11 @@ function RegistrationForm({registerForm, setRegisterForm, error, setError, handl
             <div className={styles['name-field']}>
                   <div className={styles['input-field-section']}>
                         <label>First Name</label>
-                        <input type='name' name='firstName' placeholder='Enter first name' onChange={handleFormInputChanges} required/>
+                        <input type='name' name='firstname' placeholder='Enter first name' onChange={handleFormInputChanges} required/>
                   </div>
                   <div className={styles['input-field-section']}>
                         <label>Last Name</label>
-                        <input type='name' name='lastName'placeholder='Enter last name' onChange={handleFormInputChanges} required/>
+                        <input type='name' name='lastname'placeholder='Enter last name' onChange={handleFormInputChanges} required/>
                   </div>
             </div>
 
@@ -68,6 +68,12 @@ function RegistrationForm({registerForm, setRegisterForm, error, setError, handl
             <div className={styles['input-field-section']}>
                 <label>Email</label>
                 <input type='email' name='email' placeholder='Enter email' onChange={handleFormInputChanges} required/>
+            </div>
+
+            {error && <p className={styles['error-text']}>{error.username}</p>}
+            <div className={styles['input-field-section']}>
+                <label>Username</label>
+                <input type='text' name='username' placeholder='Enter username' onChange={handleFormInputChanges} required/>
             </div>
 
             {error && <p className={styles['error-text']}>{error.password}</p>}
@@ -82,7 +88,7 @@ function RegistrationForm({registerForm, setRegisterForm, error, setError, handl
                 <input type='password' name='passwordConfirm' placeholder='Enter password again' onChange={handleFormInputChanges} required/>
             </div>
 
-            <input type='submit' className={styles['register-page-button']} value='SIGN UP'/>
+            <input type='submit' className={styles['register-page-button']} onClick={handleFormSubmit}value='SIGN UP'/>
         </form>
     );
 };

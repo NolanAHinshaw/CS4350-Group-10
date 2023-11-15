@@ -128,10 +128,11 @@ app.post("/signin", async(req, res) => {
 
   try{
     const user = await User.login(req.body)
+    console.log(user)
     return res.status(201).json({user: user})
   }
   catch(error){
-    console.error(error)
+    return res.status(500).json({error: error})
     //next(error)
   }
   
