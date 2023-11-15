@@ -4,6 +4,8 @@ import LandingPage from '../Landing Page/LandingPage';
 import RegisterPage from '../Registration Page/RegistrationPage';
 import DefaultNavBar from '../../Components/DefaultNavBar/DefaultNavBar';
 import LoginPage from '../Login Page/LoginPage';
+import CourseSearchPage from '../Course Search Page/CourseSearchPage';
+import IndividualCoursePage from '../IndividualCoursePage/IndividualCoursePage';
 import './App.css';
 import UserProfile from '../User Profile Page/UserProfile';
 
@@ -20,7 +22,8 @@ export default function App() {
             <Route path='/register' element={<RegisterPage/>}></Route>
             <Route path='/login' element={<LoginPage/>}></Route>
             <Route path='/userprofile' element={<UserProfile/>}></Route>
-
+            <Route path='/search-courses' element={<CourseSearchPage />}></Route>
+            <Route path='/search-courses/:courseId' element={<IndividualCoursePage />}></Route>
           </Routes>
         </main>
       </BrowserRouter>

@@ -8,6 +8,7 @@ async function getMultiple(page = 1){
     `SELECT *
     FROM login LIMIT ${offset},${config.listPerPage}`
   );
+  console.log('rows',rows);
   const data = helper.emptyOrRows(rows);
   const meta = {page};
 
