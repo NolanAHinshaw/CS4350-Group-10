@@ -5,8 +5,11 @@ const dotenv = require('dotenv');
 dotenv.config({ path: './.env'});
 const app = express();
 const bcrypt = require('bcrypt-nodejs');
-const port = process.env.DB_PORT || 3306;
+const port = 8000;
 const queryDataRouter = require("./routes/query-data");
+
+const router = express.Router()
+const User = require('./services/userModels')
 
 app.use(cors());
 app.use(express.json());
@@ -95,30 +98,51 @@ app.get("/userfeedback/:id", (req, res) => {
   res.send(`this is user feedback: ${id} view page`);
 });
 
+
 // route: user registration info (from form data -> frontend)
-app.post("/register", (req, res) => {
-  
-  const {email, firstName, lastName} = req.body;
+app.post("/register", async(req, res) => {
+  try{
+    const user = await User.register(req.body)
+    return res.status(201).json({user: user})
+  }
+  catch(error){
+    console.error(error)
+    //next(error)
+  }
+  /*const {email, firstName, lastName} = req.body;
 
   if(!firstName || !lastName || !email) {
     return res.status(400).json("first name, last name, and email are incorrect");
   }
   else { 
     return res.status(200).json({email, firstName, lastName});
-  }
+  }*/
+
+  //Request will take in id, firstname, lastname, email, username, and password
+
+  //Return the user when authenticated
 });
 
 // route: sign in
-app.post("/signin", (req, res) => {
-  
-  const {username, password} = req.body;
+app.post("/signin", async(req, res) => {
 
-  if(!username || !password) {
-    return res.status(400).json("Username and password incorrect");
+  try{
+    const user = await User.login(req.body)
+    return res.status(201).json({user: user})
   }
-  else { 
-    return res.status(200).json({username, password});
+  catch(error){
+    console.error(error)
+    //next(error)
   }
+  
+  // const {username, password} = req.body;
+
+  // if(!username || !password) {
+  //   return res.status(400).json("Username and password incorrect");
+  // }
+  // else { 
+  //   return res.status(200).json({username, password});
+  // }
 });
 
 // //sign up page

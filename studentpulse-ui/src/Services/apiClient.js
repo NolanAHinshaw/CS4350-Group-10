@@ -36,4 +36,4 @@ class ApiClient{
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default new ApiClient(API_BASE_URL || "http://localhost:3306");
+export default new ApiClient(API_BASE_URL || "http://localhost:8000");
