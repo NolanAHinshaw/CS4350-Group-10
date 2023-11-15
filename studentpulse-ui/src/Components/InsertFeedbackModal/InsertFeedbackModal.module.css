@@ -1,0 +1,60 @@
+.insert-feedback-modal{
+    background-color: #ffffff;
+    width: 40%;
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+.modal-background-listener{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.input-field-section{
+    display: flex;
+    flex-direction: column;
+}
+
+.insert-feedback-form{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dropdown-menu{
+    width: 70%;
+    padding: 0.625em 0px 0.625em 0px;
+    border-radius: 8px;
+    border: 1px solid rgba(165, 165, 165, 1);
+    font-family: inherit;
+    background-color: #fafafc;
+}
+
+.dropdown-field{
+    display: flex;
+    gap: 0.625em;
+    align-items: center;
+}
+
+.dropdown-field label{
+    width: 30%;
+}
+
+.feedback-submit-button{
+    width: 100%;
+    padding: 0.938em 0.625em;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 4px;
+    background-color: #4675C0;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: inherit;
+    margin-top: 2.5em;
+    font-size: 1em;
+}
+
+.feedback-submit-button:hover{
+    background-image: linear-gradient(rgb(0 0 0/40%) 0 0);
+}
