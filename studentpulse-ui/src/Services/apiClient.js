@@ -5,13 +5,6 @@ import API_BASE_URL from './constants';
 class ApiClient{
     constructor(remoteHostUrl) {
         this.remoteHostUrl = remoteHostUrl
-        this.token = null
-        this.tokenName = "bugtracker_token"
-    }
-      
-    setToken(token) {
-       this.token = token
-        localStorage.setItem(this.tokenName, token)
     }
     
     async request({ endpoint, method = `GET`, data = {} }) {
@@ -20,7 +13,6 @@ class ApiClient{
         //Make sure that all protected routes in the backend requests have an attached token (allows user persistence)
         const headers = {
           "Content-Type": "application/json",
-          Authorization: this.token ? `Bearer ${this.token}` : "",
         }
     
         //For all requests passed from frontend to backend, attach a JWT and send the request. If errors, extract the message.
@@ -36,12 +28,12 @@ class ApiClient{
 
     // ----------------------- AUTHENTICATION REQUESTS ---------------------------------------------
     async login(credentials) {
-        return await this.request({ endpoint: `auth/login`, method: `POST`, data: credentials })
+        return await this.request({ endpoint: ``, method: `POST`, data: credentials })
     }
     async signup(credentials) {
-        return await this.request({ endpoint: `auth/register`, method: `POST`, data: credentials })
+        return await this.request({ endpoint: ``, method: `POST`, data: credentials })
     }
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default new ApiClient(API_BASE_URL || "http://localhost:3001");
+export default new ApiClient(API_BASE_URL || "http://localhost:3306");
